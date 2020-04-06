@@ -38,10 +38,32 @@
 
 ## git时光穿梭机
 
-首先我们使用`git log --oneline`，则会得出精简模式的提交历史记录，我们记住前面的commit ID
+首先我们使用`git log --oneline`，则会得出精简模式的提交历史记录，我们记住前面的commit ID。  
 
+注意这里的回到过去提交的版本只是HEAD指针指向之前的版本，可以使用`git checkout master`回到此时的master分支，即这里master是不会变的。  
+
+而如果想彻底的回到过去的版本，则应该使用`git rebase`指令，这时改变的是master，即将当前的master设置成你想要的那个commit。
 
 ## git reset
 
 
 ## git checkout
+
+
+## 分支
+
+### 创建分支
+
+使用命令`git branch`来查看分支情况；
+使用`git branch + 分支名`来创建一个新的分支；
+使用`git checkout + 分支名`跳转到想要的分支；
+
+在一个分支上操作时不会影响到其他分支的，之后可以使用`git merge`来合并分支
+
+
+
+### 标签tag
+
+用于版本回退，就很方便。  
+
+使用`git tag`来设置标签，原来版本回退是使用commit ID，现在就可以使用tag标签回退。
